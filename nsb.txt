@@ -8,9 +8,9 @@ DSMS
 DSM-EU
 DSM-SG
 DSM-JP
-PalaceUS
-PalaceUK
-PalaceJP
+Palace
+Palace
+Palace
 Undefeated
 Bape
 Blends
