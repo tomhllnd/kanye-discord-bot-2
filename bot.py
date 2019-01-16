@@ -7,6 +7,11 @@ import time
 import random
 import os
 
+cyberList = open("cyber.txt", "r")
+nsbList = open("nsb.txt", "r")
+soleList = open("sole.txt", "r")
+pdList = open("pd.txt", "r")
+
 facts = ['I gave Donald the pass','We came into a broken world. And were the cleanup crew.','If you have the opportunity to play this game of life you need to appreciate every moment. a lot of people don’t appreciate the moment until it’s passed.','We all self-conscious. I’m just the first to admit it.','If I was just a fan of music, I would think that I was the number one artist in the world.','Love your haters, they’re your biggest fans.','I love it','Every man loves men. Facts.','The prettiest people do the ugliest things.']
 token = os.getenv('TOKEN')
 Client = discord.Client()
@@ -73,6 +78,57 @@ async def on_message(message):
         embed.add_field(name='Ping', value='Check if im running and online with `kanye, ping`. If you spam it, Ill get hella triggered ( ͡☉ ͜ʖ ͡☉)', inline=False)
         embed.set_footer(text="Kanye Bot made by Plug#5464")
         await client.send_message(message.channel,embed=embed)
+    if message.content.startswith("kanye, check "):
+        userInput = message.content[11:]
+        userInput = userInput.split()
+        if userInput[0].lower() == 'nsb':
+            await client.send_message(message.channel, "Running search on nsb.txt ...")
+            for nsbLine in nsbList:
+                if nsbList[nsbLine].lower() == userInput[1].lower():
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is definatley compatible with {userInput[0]}', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+                else:
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is potentially not compatible with {userInput[0]}', inline=False)
+                    embed.add_field(name='\u200b', value=f'Check on {userInput[0]}s site here: https://www.nikeshoebot.com/product/nike-shoe-sneaker-bot/', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+        if userInput[0].lower() == 'cyber' or 'cybersole' or 'cyberaio':
+            await client.send_message(message.channel, "Running search on cyber.txt ...")
+            for cyberLine in cyberList:
+                if cyberList[cyberLine].lower() == userInput[1].lower():
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is definatley compatible with {userInput[0]}', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+                else:
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is potentially not compatible with {userInput[0]}', inline=False)
+                    embed.add_field(name='\u200b', value=f'Check on {userInput[0]}s site here: https://cybersole.io/', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+        if userInput[0].lower() == 'pd' or 'projectdestroyer':
+            await client.send_message(message.channel, "Running search on pd.txt ...")
+            for pdLine in pdList:
+                if pdList[pdLine].lower() == userInput[1].lower():
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is definatley compatible with {userInput[0]}', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+                else:
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is potentially not compatible with {userInput[0]}', inline=False)
+                    embed.add_field(name='\u200b', value=f'Check on {userInput[0]}s site here: https://projectdestroyer.com/site-list/', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+        if userInput[0].lower() == 'sole' or 'soleaio':
+            await client.send_message(message.channel, "Running search on sole.txt ...")
+            for pdLine in pdList:
+                if pdList[pdLine].lower() == userInput[1].lower():
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is definatley compatible with {userInput[0]}', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
+                else:
+                    embed = discord.Embed(color=0x2fe14e)
+                    embed.add_field(name='Site Bot Compatibility Checker', value=f'Site {userInput[1]} is potentially not compatible with {userInput[0]}', inline=False)
+                    embed.add_field(name='\u200b', value=f'Check on {userInput[0]}s site here: https://hypebots.org/bot/sole-aio', inline=False)
+                    embed.set_footer(text="Kanye Bot made by Plug#5464")
 
 @client.event
 async def on_member_join(member):
