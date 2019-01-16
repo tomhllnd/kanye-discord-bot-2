@@ -79,7 +79,7 @@ async def on_message(message):
         embed.set_footer(text="Kanye Bot made by Plug#5464")
         await client.send_message(message.channel,embed=embed)
     if message.content.startswith("kanye, check "):
-        userInput = message.content[11:]
+        userInput = message.content[12:]
         userInput = userInput.split()
         if userInput[0].lower() == 'nsb':
             await client.send_message(message.channel, "Running search on nsb.txt ...")
