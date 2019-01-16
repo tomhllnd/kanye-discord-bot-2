@@ -76,13 +76,14 @@ async def on_message(message):
 
 @client.event
 async def on_member_join(member):
-    embed = discord.Embed(title="pluggduk Patreon", url='http://patreon.com/pluggduk', color=0x2fe14e)
-    embed.set_author(name="Welcome to pluggdUK.")
-    embed.add_field(name='Welcome', value='We are a UK-based cook group, who look forward to helping you make profit. We charge a small fee of £15 per month, which relative to other cook groups, is very small.\n ', inline=False)
-    embed.add_field(name='Features', value='We offer 24/7 advice, groupbuys (recently offered members chance to buy NSB for $425, now selling at $1k), **Free** Supreme slots and **very** cheap Shopify slots on bots like Cyber, Instant homemade restock monitors, REsell Predicitons, accurate early links, and much more. ', inline=False)
-    embed.add_field(name='Become a Member', value='In order to become a paying member, you need to click on the link to our patreon above, and become the Chef tier. After that, you need to link your discord with patreon, and you will recieve your role.', inline=False)
-    embed.set_footer(text="Kanye Bot made by Plug#5464")
-    await client.send_message(member, embed=embed)
+    if member.server.id == '510211732757676052':
+        embed = discord.Embed(title="pluggduk Patreon", url='http://patreon.com/pluggduk', color=0x2fe14e)
+        embed.set_author(name="Welcome to pluggdUK.")
+        embed.add_field(name='Welcome', value='We are a UK-based cook group, who look forward to helping you make profit. We charge a small fee of £15 per month, which relative to other cook groups, is very small.\n ', inline=False)
+        embed.add_field(name='Features', value='We offer 24/7 advice, groupbuys (recently offered members chance to buy NSB for $425, now selling at $1k), **Free** Supreme slots and **very** cheap Shopify slots on bots like Cyber, Instant homemade restock monitors, REsell Predicitons, accurate early links, and much more. ', inline=False)
+        embed.add_field(name='Become a Member', value='In order to become a paying member, you need to click on the link to our patreon above, and become the Chef tier. After that, you need to link your discord with patreon, and you will recieve your role.', inline=False)
+        embed.set_footer(text="Kanye Bot made by Plug#5464")
+        await client.send_message(member, embed=embed)
         
 
 
