@@ -47,7 +47,6 @@ async def on_message(message):
         print('StockX Lvl3:',stockx3Output)
         stockx4Output = round(((userAmountPennies * 0.89) / 100) ,2)
         print('StockX Lvl4:',stockx4Output)
-        titleforEmbed = ('Fees for £',userAmountPounds)
         embed = discord.Embed(title=f'Fees Calculated for £{userAmountPounds}', color=0x2fe14e)
         embed.add_field(name='Paypal', value=f'£{paypalOutput}', inline=False)
         embed.add_field(name='Bump', value=f'£{bumpOutput}', inline=False)
@@ -64,6 +63,14 @@ async def on_message(message):
     if message.content.startswith("kanye, fact"):
         embed = discord.Embed(color=0x2fe14e)
         embed.add_field(name=facts[random.randint(0,(len(facts)-1))], value='- Kanye West', inline=False)
+        embed.set_footer(text="Kanye Bot made by Plug#5464")
+        await client.send_message(message.channel,embed=embed)
+    if message.content.startswith("kanye, help"):
+        embed = discord.Embed(color=0x2fe14e)
+        embed.set_author(name="Hey, I'm Kanye.", icon_url="https://cdn.discordapp.com/attachments/533238248781250563/535116197591646218/help.png")
+        embed.add_field(name='Fee Calculator', value='Beckon me with `kanye, fees <amount>` and I will calculate the fees each of the sites you dirty resellers will take', inline=False)
+        embed.add_field(name='Facts and Quotes', value='Beckon me with `kanye, fact` and I will recite one of my quotes or stories', inline=False)
+        embed.add_field(name='Ping', value='Check if im running and online with `kanye, ping`. If you spam it, Ill get hella triggered ( ͡☉ ͜ʖ ͡☉)', inline=False)
         embed.set_footer(text="Kanye Bot made by Plug#5464")
         await client.send_message(message.channel,embed=embed)
         
